@@ -1,3 +1,255 @@
+<?php
+$json = [324,345,4543,543,543,5,454,35,43];
+
+var_dump(json_encode($json));
+echo "<pre>";
+$jsons = '{"sidfh":324,"sidfsdh":345,"sidfsdsh":4543,"sidfasdah":543,"sidasdfsafh":543,"sidsdfasdfh":5,"sidsdsadfh":454,"sidfqrweh":35,"sidfasqerewh":43}';
+var_dump(json_decode($jsons));
+class nc {
+    public static function m(){
+        echo "Hello World";
+    }
+}
+
+nc::m();
+
+class d{
+    public static function ms($n , $u)
+    {
+        return $n * $u;
+    }
+}
+$res = d::ms(4,6);
+echo $res;
+
+trait w{
+    public function welcome(){
+        echo "This function public";
+    }
+
+    public function new(){
+        echo "This is a new";
+    }
+}
+trait e{
+    public function welcome1(){
+        echo "This function public";
+    }
+
+    public function new1(){
+        echo "This is a new";
+    }
+}
+
+class nn{
+    use w , e;
+}
+
+$nn = new nn();
+$nn->welcome();
+$nn->welcome1();
+
+interface Animal{
+    public function makesound();
+}  
+
+class cat implements Animal{
+    public function makesound(){
+        echo "This is a Cat Sound<br>";   
+    }
+}
+Class dog implements Animal{
+    public function makesound(){
+        echo "This is a dog sound<br>";
+    }
+}
+
+$cat = new cat();
+$cat->makesound();
+$dog = new dog();
+$dog->makesound();
+
+abstract class ParentClass{
+   abstract public function prefixName($name);
+}
+
+class ChildClass extends ParentClass {
+    
+    public function prefixName($name ,$seprator = "", $greet = "Dear"){
+        if($name == "Sahil Beniwal"){
+            $prefix = "Mr.";
+        } elseif ($name == "Akansha") {
+            $prefix = "Mrs.";
+        } else {
+            $prefix = "Mr";
+        }
+
+        return "$greet  $prefix$seprator  $name";
+    }        
+}
+
+$clas = new ChildClass;
+echo $clas->prefixName("Sahil Beniwal");
+echo "<br>";
+echo $clas->prefixName("Akansha");
+echo "<br>";
+echo $clas->prefixName("AA");
+
+// abstract class car{
+//     public $name;
+
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+
+//     abstract public function intro();
+// }
+// class Audi extends car{
+//     public function intro(){
+//         return "This is a $this->name car";
+//     }
+// }
+
+// class citron extends car{
+//     public function intro(){
+//         return "This is a $this->name car";
+//     }
+// }
+
+// $audi = new Audi("Audi");
+// echo $audi->intro();
+
+// $cit = new citron("Citron");
+// echo $cit->intro();
+
+// Class Fruit{
+//     public $name;
+//     public $color;
+
+//     public function __construct($name,$color){
+//         $this->name = $name;
+//         $this->color = $color;
+//     }
+//     public function intro(){
+//         echo "This is a Name $this->name and the Color is $this->color";
+//     }
+// }
+
+// Class Strawberry extends Fruit{
+//     public $weight;
+
+//     public function __construct($name,$color,$weight){
+//         $this->name = $name;
+//         $this->color = $color;
+//         $this->weight = $weight;
+//     }
+
+//     public function intro(){
+//         echo "A $this->name is $this->color and the weight is $this->weight";
+//     }
+// }
+
+// $str = new Strawberry("Strawberry","red",50);
+
+// $str->intro();
+
+
+// class nesw{
+//     const Message = "This is const keyword for using that all type of function";
+
+//     public function n(){
+//         echo self::Message;
+//     }
+// }
+// $n = new nesw();
+// $n->n();
+// echo nesw::Message;
+// class fruits{
+    
+//     public $apple;
+//     public $banana;
+//     private $g;
+    
+//     public function set_details($apple,$banana,$g){
+//         $this->apple = $apple;
+//         $this->banana = $banana;
+//          $this->g = $g;
+//     }
+//     public function get_details(){
+//         echo "First fruit name :" . $this->apple . "<br>Second fruit name:" . $this->banana . "<br>". $this->g;
+//     }
+// }
+
+// $fr = new fruits();
+// // var_dump($fr instanceof fruits);
+// $fr->set_details("Apple","Banana","g");
+// // $fr->set_details = "f";
+// $fr->get_details();
+
+
+// // constructor
+// class cons{
+//     public $name;
+//     public $color;
+    
+//     function __construct($name,$color)
+//     {   
+//         $this->name = $name;
+//         $this->color = $color;
+//     }
+//     function get_det(){
+//         echo "Name:" .$this->name . "<br> Color". $this->color;
+//     }
+// }
+// $c = new cons("Maruti","White");
+// $c->get_det();
+
+// class cd{
+//     public $name;
+//     public $color;
+
+//     function __construct($name, $color){
+//         $this->name = $name;
+//         $this->color = $color;
+//     }
+//     function __destruct()
+//     {
+//         echo "<br>Name:".$this->name."<br>Color".$this->color;
+//     }
+// }
+
+// $dc = new cd("Swift","White");
+// // inheritance
+
+// class ins{
+//     public $ne;
+//     public $d;
+//     public function __construct($ne,$d){
+//         $this->ne = $ne;
+//         $this->d = $d;
+//     }
+//     public function intro(){
+//         echo "This is nr $this->ne and the color $this->d";
+//     }
+
+//     protected function news(){
+//         echo "The fruit is $this->ne and the color is $this->d.";
+//     }
+// }
+
+// class straw extends ins{
+//     public function mes(){
+//         echo "Am Straw";
+//         $this->news();
+//     }
+// }
+
+
+// $ste = new straw("Ap","fg");
+// $ste->mes();
+// $ste->intro();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
