@@ -101,6 +101,24 @@ Switch($favcolor){
     default:
     echo "Your are looking some other color but your color is not present this time";
 }
+
+
+$d = 1;
+switch($d){
+    case 1:
+        case 2:
+            case 3:
+                case 4:
+                    case 5:
+                         echo "This week is very long";
+                                break;
+                        case 6:                               
+                            case 0:
+                                echo  "Weekends are the best";
+                                break;
+                                default:
+                                    echo "Something went wrong";
+}
 function messa(){
     return __FUNCTION__;
 }
