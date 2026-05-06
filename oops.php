@@ -1,10 +1,69 @@
-<?php
+<?php 
+echo "<pre>";
+
+function messa(){
+    return __FUNCTION__;
+}
+echo messa();
+
+echo "<br>";
+class car{
+    public $color;
+    public $name;
+
+    public function __construct($color,$name){
+        $this->color = $color;
+        $this->name = $name;
+    }
+
+    public function message(){
+        return "This car is $this->color . and name is $this->name";
+    }
+}
+
+$a = array("Volvo", "BMW", "Toyota"); // indexed array
+$b = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43"); 
+
+$a = (object) $a;
+$b = (object) $b;
+var_dump($a);
+var_dump($b);
+$mycar = new car("Blue","Swift");
+$mycar = (array) $mycar;
+var_dump($mycar);
+
+
+$a = 23;
+$c = 3.34;
+$f = "sdf";
+var_dump($a);
+
+var_dump($c);
+
+var_dump($f);
+
+
+
+$x = "Hello My Name is Sahil Beniwal";
+$y = explode(" ", $x);
+print_r($y);
+echo strlen("Hello World!");
+
+echo str_word_count("ajhsdgfhjfvbf");
+
+$x  =342;
+
+var_dump($x);
+
 $json = [324,345,4543,543,543,5,454,35,43];
 
 var_dump(json_encode($json));
 echo "<pre>";
+
 $jsons = '{"sidfh":324,"sidfsdh":345,"sidfsdsh":4543,"sidfasdah":543,"sidasdfsafh":543,"sidsdfasdfh":5,"sidsdsadfh":454,"sidfqrweh":35,"sidfasqerewh":43}';
 var_dump(json_decode($jsons));
+
+
 class nc {
     public static function m(){
         echo "Hello World";
