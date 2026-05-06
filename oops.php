@@ -1,10 +1,123 @@
 <?php 
+
+// Arithmetic
+$a = 10;
+$b = 3;
+
+echo $a + $b; // 13
+echo "<br>";
+echo $a - $b; // 7
+echo "<br>";
+echo $a * $b; // 30
+echo "<br>";
+echo "<br>";
+echo $a / $b; // 3.33
+echo "<br>";
+echo $a % $b; // 
+echo "<br>";
+echo $a ** $b; // 1000
 echo "<pre>";
 
+//assigment operator
+$sa = 10;
+echo $sa += 14;echo "<br>";
+echo $sa -= 234;echo "<br>";
+echo $sa *= 5;echo "<br>";
+echo $sa /=23;echo "<br>";echo "<br>";
+
+
+// Comparsion operator
+
+$a = 10;echo "<br>";
+var_dump($a == 10);echo "<br>";
+var_dump($a >= 10);echo "<br>";
+var_dump($a <= 10);echo "<br>";
+var_dump($a === 10);echo "<br>";
+var_dump($a != 10);echo "<br>";
+var_dump($a !== 10);echo "<br>";
+
+//Increment / Decrement Operators
+
+$aa = 10;
+echo ++$aa;echo "<br>";
+echo $aa++;echo "<br>";
+$aaaa = 10;
+echo --$aaaa;echo "<br>";
+echo $aaaa--;echo "<br>";
+echo "<br>";
+// Logical Operators
+
+$a = 10;
+$b = 5;
+if($a <= 10 && $b == 5){
+    echo  "(bool) .True";
+}
+echo "<br>";
+if($a != 10 || $b <= 5){
+    echo  "(bool) .True";
+}
+echo "<br>";
+
+$first  ="SAHIL";
+$last  = "BENIWAL";
+
+echo $first  ." ". $last;
+
+$first .= "Kumar";
+
+echo $first;
+
+
+
+// array operator
+
+$a = ["a" => 2,"b" => 10];
+$b = ["b" => 4, "c" => 3];
+
+print_r($a + $b);
+
+// ternery operator
+
+$age = 18;
+
+$status  = $age >= 18 ? "Adult" : "Minor";
+echo $status;
+
+
+// Switch case
+
+$favcolor = "Gresen";
+
+Switch($favcolor){
+    case "Resd";
+        echo "Your favorite color id red";
+    break;
+    case "Green";
+        echo "Your favorite color is green";
+    break;
+    case "Blue";
+        echo "Your favorite color is Blue";
+    break;
+    default:
+    echo "Your are looking some other color but your color is not present this time";
+}
 function messa(){
     return __FUNCTION__;
 }
 echo messa();
+trait messag{
+    function t(){
+        return __TRAIT__;
+    }
+}
+
+class mesasgf{
+    use messag;
+}
+
+$in = new mesasgf();
+echo $in->t();
+
 
 echo "<br>";
 class car{
