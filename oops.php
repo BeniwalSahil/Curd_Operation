@@ -1,5 +1,125 @@
 <?php 
+function ford($a , $g){
+   return $a + $g . "return with paramerter function";
+}
+echo ford(3,4);
+echo "<br>";
+$name = function($bna){
+    return "Hello" . $bna;
+};
+echo $name("SAHIL");
+echo "<br>";
 
+// arrow function
+
+$sum = fn($a , $b) => $a + $b;
+// return $sum(10,4);
+echo $sum(2,3);echo "<br>";
+
+// recursive function 
+
+function factor($n){
+    if($n <= 1) return 1;
+    return $n * factor($n - 1);
+}
+echo factor(4);
+
+// $nu = for($i = 1; $i <= 100; $++;){
+//     echo $i;
+// }
+
+function num($num){
+    return ($num % 2 == 0) ? "Even" : "Odd";
+}
+
+for($i = 2; $i <= 100; $i += 2){
+    echo $i . " = is " . num($i)."<br>";
+}
+
+// find missing number 
+
+
+function findmissing($ns,$I){
+    $total = $I * ($I + 1) / 2;
+    $sum = array_sum($ns);  
+    return $total - $sum;
+}
+$ns = [1, 2, 4, 5, 6];
+$I = 6;
+echo findmissing($ns,$I);
+echo "<br>";
+echo "<br>";
+
+function fiind($nm){
+    $n = count($nm);
+    for($i = 0; $i < $n; $i++){
+        while(
+            $nm[$i] > 0 && $nm[$i] <= $n && $nm[$nm[$i] - 1] != $nm[$i]
+        ){
+            $correct = $nm[$i] - 1;
+            $temp = $nm[$i];
+            $nm[$i] = $nm[$correct];
+            $nm[$correct] = $temp;
+        }
+    }
+
+    for($i = 0; $i <= $n; $i++){
+        if($nm[$i] != $i + 1){
+            return $i + 1;
+        }
+    }  
+    return $n + 1; 
+}
+
+$arr = [3, 4, -1, 1];
+
+echo fiind($arr);
+echo "<br>";echo "<br>";
+
+function maxm($a,$b,$c){
+    return max($a,$b,$c);
+}
+echo maxm(23,234,432);
+
+function re($str){
+    return strrev($str);
+}
+
+
+
+echo re("SAHIL BENIWAL");
+echo "<br>";echo "<br>";
+// count vowalbe stream_set_blocking
+
+function ss($atr){
+    return preg_match_all('/[aeiou]/i', $atr);
+}
+echo ss("Hello World");
+echo "<br>";echo "<br>";
+
+
+function primeNumber($num){
+    if($num < 2) return "Prime Number";
+    for($i = 2; $i <= sqrt($num); $i++ ){
+        if($num % $i == 0) return "Not found";
+    }
+    return "Prime";  
+}
+echo primeNumber(7);
+echo "<br>";echo "<br>";
+
+function sumar($a){
+    return array_sum($a);
+}
+
+$a = [234,45,6,45,34];
+echo sumar($a);
+echo "<br>";echo "<br>";
+echo "<br>";echo "<br>";
+echo "<br>";echo "<br>";
+
+echo "<br>";echo "<br>";
+echo "<br>";echo "<br>";
 // Arithmetic
 $a = 10;
 $b = 3;
@@ -119,6 +239,41 @@ switch($d){
                                 default:
                                     echo "Something went wrong";
 }
+// match 
+
+
+$sd = "read";
+try{
+    $test = match($sd){
+        "red " => "This is your red color",
+        "resad" => "You sare reading this book"
+        // default => "No more data"
+    };
+} catch (\UnhandledMatchError $e){
+    echo $e;
+}
+echo $test;
+
+$i = 1;
+while($i <= 10) echo $i++ * (10 - 1 * 2 / 4) . "<br>";
+
+$i = 11;
+do{
+  echo $i++ . "<br>";
+}while($i <= 20);
+
+for($i = 23; $i <= 38; $i++){
+    if($i == 24) continue;
+    echo $i . "<br>";
+}
+echo "<br>";
+$arry = [34,34,43,4,4,3425,546,546,46,456,456,456,546,456,456,456,456,56,45,2,4,1,41,31,432,44,6756,765,];
+
+foreach($arry as $n3){
+    if($n3 == 3425) continue;
+    echo $n3 ."e"  . "<br>" ;
+}
+
 function messa(){
     return __FUNCTION__;
 }
