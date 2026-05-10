@@ -53,10 +53,93 @@
         background: red;
         color: white;
     }
+
+    body {
+        font-family: Arial;
+        background: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .calculator {
+        background: #222;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        color: white;
+    }
+
+    input {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+        font-size: 18px;
+        padding-left: 10px;
+    }
+
+    button {
+        width: 100%;
+        height: 40px;
+        background: orange;
+        border: none;
+        color: white;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    h2 {
+        text-align: center;
+    }
     </style>
 </head>
 
 <body>
+    <form method="post">
+        <input type="number" name="num1" placeholder="Enter First Number" Required>
+        <input type="number" name="num2" placeholder="Enter Second Number" Required>
+        <select name="operator" required>
+            <option value="">Select Operator</option>
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <button type="submit" name="calculate">Calculate</button>
+    </form>
+    <?php 
+    if(isset($_POST['calculate'])){
+
+    $num1 = $_POST['num1'];
+    $num2 = $_POST['num2'];
+    $operator = $_POST['operator'];
+    
+    switch($operator){
+        case '+':
+            $result = $num1 + $num2;
+        break;
+        case '-':
+            $result = $num1 - $num2;
+        break;
+        case '*':
+            $result = $num1 * $num2;
+        break;
+        case '/':
+            if(!$num2 == 0){
+                $result = $num1 / $num2;
+            } else {
+                $result = "Cannot divide by zero";
+            }
+        break;
+        default:
+            $result = "Invalid Operator";
+        
+    }
+    echo "<h2>Result: $result</h2>";
+    }
+
+    ?>
     <div class="container">
         <input type="text" id="display" readonly>
         <br>
