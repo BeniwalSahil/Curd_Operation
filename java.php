@@ -9,11 +9,60 @@
 
 
 <body>
+    <script>
+    for (let i = 0; i < 5; i++) {
+        console.log(i);
+    }
+    let j = 0;
+    while (j < 10) {
+        console.log(j);
+        j++;
+
+    }
+    let r = "";
+    let aas = 0;
+    do {
+        console.log(r += "This is number: " + aas);
+        aas++;
+    } while (aas < 10);
+
+    const person = {
+        fname: "SAHIl",
+        lname: "beniwal"
+    };
+    let e = "";
+    for (let x in person) {
+        console.log(e += person[x] + "<br>");
+    }
+
+    let neww = [243, 345, 3454];
+    for (let d of neww) {
+        console.log(d);
+    }
+
+    function mus() {
+        let n = 0;
+        return {
+            next: function() {
+                n += 10;
+                return {
+                    value: n,
+                    done: false
+                }
+            }
+        }
+    }
+    const nnd = new mus();
+    n.mus();
+    console.log(nnd);
+    </script>
 
     <input type="text" id="inputs" readonly>
     <button onclick="addinp()">Clone</button>
     <button onclick="removeinp()">Remove</button>
     <b><i>
+            <p id="visit"></p>
+            <p id="set_method"></p>
             <button onclick="myFunction11()">Sort Alphabetically</button>
             <button onclick="myFunction12()">Sort Numerically</button>
             <button onclick="my12()">Random Sorting</button>
@@ -23,395 +72,516 @@
             <h2 id="gedt"></h2>
             <h1 id="ge"></h1>
             <h1 id="gessss"></h1>
+            <h1 id="gesssss"></h1>
+            <h1 id="s"></h1>
+            <h1 id="sw"></h1>
 
         </i>
     </b>
-    <!-- <ul id="listing"></ul>
-    <p id="display"></p>
-    <h2 id="demo"></h2>
-    <h3 id="demo1">
-        <h1 id="j"></h1>
-
-
-    </h3>
-    <p id="do"></p><button onclick="say()">SHOW HERE!</button> -->
-
     <script>
-    const b = [3, 24, 2, 52, 62];
-    document.getElementById("gessss").innerHTML = mys(b);
+    const call = [{
+        name: "SAHIL",
+        q: 1
+    }, {
+        AMIT: "AMIT",
+        q: 3390
+    }, {
+        age: "22",
+        q: 23
+    }];
 
-    function mys(arr) {
-        return Math.min.apply(null, arr);
-
+    function mycallback({
+        q
+    }) {
+        return q > 1000 ? "OK" : "Not Ok";
     }
 
-    console.log(mys());
+    const resilt = Map.groupBy(call, mycallback);
+    console.log(resilt);
 
-    const gwr = [33, 33, 7, 72, 67, 89, 3];
-    document.getElementById("gesss").innerHTML = gwr;
+    let we = 0;
 
+    const ma = new Map([
+        ["apples", 500],
+        ["bananas", 300],
+        ["oranges", 200]
+    ]);
 
-    function my12() {
-        for (let i = gwr.length - 1; i > 0; i--) {
-            let j = Math.floor(Math.random() * (i + 1));
-            let k = gwr[i];
-            gwr[i] = gwr[j];
-            gwr[j] = k;
-        }
-        // gwr.sort(function() {
-        //     return 0.5 - Math.random()
-        // });
-        document.getElementById("gesss").innerHTML = gwr;
-    }
-    const points = [3, 234, , 3455, 3, 3, 32, 34, 6, 24, 6, 742, 7, 825, 1, 2];
-
-
-    document.getElementById("gesss").innerHTML = points;
-
-    function myFunction11() {
-        points.sort();
-        document.getElementById("gesss").innerHTML = points;
-    }
-    console.log(myFunction11());
-
-    function myFunction12() {
-        points.sort(function(a, b) {
-            return (a - b);
-        });
-        document.getElementById("gesss").innerHTML = points;
-    }
-    const fruitss = ["Banana", "Orange", "Apple", "Mango"];
-
-    const nexts = ["Banansa", "Oransge", "Appse", "Masngo"];
-    const nextss = ["Banasnsa", "Orasnsge", "Appsse", "Masnsgo"];
-    const mymerge = fruitss.concat(nexts, nextss);
-    // let v = mymerge.sort();
-    // mymerge.reverse();
-    let v = mymerge.toSorted();
-    const reversed = mymerge.toReversed();
-    let posittion = mymerge.indexOf("Banana") + 1 + 1 + 2 + (21 / 2 * 2);
-    let posittiosn = mymerge.lastIndexOf("Banana") + 1;
-    console.log(mymerge.includes("Apple"));
-    console.log(posittion);
-    console.log(posittiosn);
-
-    console.log(mymerge);
-    let g = fruitss.pop();
-    fruitss.push("kiiw");
-    fruitss.shift();
-    fruitss.unshift("lemon");
-    fruitss[0] = "Ap";
-    fruitss[fruitss.length] = "App";
-    delete fruitss[2];
-    console.log(Array.isArray(fruitss));
-    console.log(g);
-
-
-
-    document.getElementById("ge").innerHTML = v;
-    document.getElementById("ge").innerHTML = reversed;
-    const poit = [24, 56, 1, 4, 57, 2, 5, 3];
-
-    poit.sort(function m(a, b) {
-        return (b - a);
+    ma.forEach(function(value, key) {
+        console.log(we += key + ' = ' + value + "<br>");
     });
-    poit.sort(function m(a, b) {
-        return (a - b);
-    });
-    document.getElementById("get_id").innerHTML = poit;
+    document.getElementById("visit").innerHTML = we;
 
-    // let myList = fruitss.length;
-    // let myLisst = fruitss.toString();
-    let fruit = fruitss[2];
-    console.log(fruit);
-    console.log(myList);
-    console.log(myLisst);
+    ma.set("Apples", 5000);
 
+    let numb = ma.get("Apples");
 
-    let x = "";
-    const myObj = {
-        name: "John",
-        age: 30,
-        cars: [{
-                name: "Ford",
-                models: ["Fiesta", "Focus", "Mustang"]
-            },
-            {
-                name: "BMW",
-                models: ["320", "X3", "X5"]
-            },
-            {
-                name: "Fiat",
-                models: ["500", "Panda"]
-            }
-        ]
+    if (ma.has("Apples")) {
+        console.log(we += numb);
+    } else {
+        ma.set("Appless", 343434);
+        console.log(we += 343434);
     }
 
-    for (let i in myObj.cars) {
-        x += "<h2>" + myObj.cars[i].name + "</h2>";
-        for (let j in myObj.cars[i].models) {
-            x += myObj.cars[i].models[j] + "<br>";
-        }
-    }
-    document.getElementById("ge").innerHTML = x;
+    console.log(numb);
 
+    console.log(numb);
 
-    const fruits = ["Banana", "Orange", "Apple", "Mango"];
-    let ds = fruits.length;
-
-    let tes = "<ul>";
-    for (let i = 0; i < ds; i++) {
-        tes += "<li>" + fruits[i] + "</li>";
-    }
-    tes += "</ul>";
-    document.getElementById("gedt").innerHTML = tes;
-
-    function Pers(fullname, fathername, age, fatherage) {
-        this.fullname = fullname;
-        this.fathname = fathername;
-        this.age = age;
-        this.fatherage = fatherage;
-    }
-    let t = new Pers("SAHIL > 18", "Surendra Beniwal > 40", 22, 40);
-    document.getElementById("get").innerHTML = t.fullname + "<br>" + t.fathname + "<br>" + t.age + "<br>" + t.fatherage;
-    const pers = {
-        fullname: "SAHIL BENIWAL",
-        fathername: "Surendra Beniwal",
-        age: 22,
-        fatherage: 40
-    }
-    let ss = JSON.stringify(pers);
-    document.getElementById("get_id").innerHTML = ss;
-    // const myArray = Object.values(pers);
-    // let tr = myArray.toString();
-
-    // document.getElementById("get_id").innerHTML = tr;
-    // const person = {
-    //     fullname: "Sahil",
-    //     lastname: "Beniwal",
-    //     age: 24,
-    //     // ffcun: function() {
-    //     //     return this.fullname + "  " + this.lastname;
-    //     // }
-    // };
-    // let te = "";
-    // for (let x in person) {
-    //     te += person[x] + "<br>";
-    // }
-
-    // document.getElementById("get_id").innerHTML = te;
-    // document.getElementById("get_id").innerHTML = person.ffcun();
-
-    function addinp() {
-        let li = document.createElement("li");
-        let input = document.getElementById("inputs").innerHTML + '<input type="text" id="inputs" readonly>';
-
-        document.getElementById("listing").appendChild(li).innerHTML = input;
-        document.getElementById("inputs").value = "";
-    }
-
-    function removeinp() {
-        let listi = document.getElementById("listing");
-        if (listi.lastElementChild) {
-            listi.lastElementChild.remove();
-        }
-    }
-    let names = "REVERSE STRING";
-    let results = names.length;
-    for (let m = results - 1; m >= 0; m--) {
-        results += names[m];
-    }
-    console.log(
-        document.getElementById("demo").innerHTML = results);
-
-    const carss = {
-        type: "Fiat",
-        model: "500",
-        color: "white"
+    const persoss = new WeakSet();
+    const sahil = {
+        name: "Sahil",
+        age: "22"
+    };
+    const nitin = {
+        name: "nitin",
+        age: "22"
+    };
+    const akas = {
+        name: "akas",
+        age: "21"
     };
 
-    document.getElementById("j").innerHTML = carss.type + "<br>" + carss.model + "<br>" + carss.color;
+    gettrack(sahil);
+    gettrack(nitin);
+    gettrack(akas);
 
-
-    const swift = {};
-    swift.type = "Maruti";
-    swift.model = "2026";
-    swift.color = "Red";
-    swift.name = "swift";
-    document.getElementById("demo").innerHTML = swift.type + "<br>" + swift.model + "<br>" + swift.color + "<br>" +
-        swift.name;
-
-    function myfunction() {
-        document.getElementById("display").innerHTML = "Hello World";
-    }
-    myfunction();
-    let car = ["BMW", "Volvo", "Saab", "Ford"];
-    let text = "";
-
-    for (let i = 0; i < car.length; i++) {
-        console.log(text += car[i] + "<br>");
-    }
-
-    document.getElementById("display").innerHTML = text;
-    let next = "";
-    for (let j = 0; j < car.length; j++) {
-        next += car[j] + "<br>";
-    }
-    document.getElementById("demo").innerHTML = next;
-
-
-    const numbers = [45, 4, 9, 16, 25];
-    let c = numbers.length;
-    let suam = "";
-    let i = 3;
-    for (; i < c; i++) {
-        suam += numbers[i] + "<br>";
-    }
-    document.getElementById("demo").innerHTML = "The sum is:" + suam;
-
-    let name = "";
-    let is = 0;
-    while (is <= 10) {
-        name += is + "<br>";
-        is++;
-    }
-    document.getElementById("demo").innerHTML = name;
-
-    let game = "";
-    let d = 1;
-    do {
-        if (d == 3) {
-            break;
-        }
-        game += d + "<br>";
-        d++;
-    } while (d <= 10);
-    if (game) {
-        document.getElementById("demo1").innerHTML = game;
-    } else {
-        document.getElementById("demo1").innerHTML = "No game";
-    }
-    let day;
-    switch (new Date().getDay()) {
-        case 0:
-            day = "Sunday";
-            break;
-        case 1:
-            day = "Monday";
-            break;
-        case 2:
-            day = "Tuesday";
-            break;
-        case 3:
-            day = "Wednesday";
-            break;
-        case 4:
-            day = "Thursday";
-            break;
-        case 5:
-            day = "Friday";
-            break;
-        case 6:
-            day = "Saturday";
-            break;
-        default:
-            day = "Unknown";
-    }
-    document.getElementById("demo").innerHTML = "Today is:" + day;
-
-    for (let f = 0; f < 5; f++) {
-        for (let g = 0; g < 5; g++) {
-            if (g === 3) continue;
-            text += "The number is:" + g + f + "<br>";
+    function gettrack(visitor) {
+        if (persoss.has(visitor)) {
+            we += visitor.name + " is Visiting again";
+        } else {
+            persoss.add(visitor);
+            we += visitor.name + " age" + visitor.age + " is , is visiting first time welcome";
         }
     }
-    document.getElementById("demo").innerHTML = text;
-    const ca = ["BMW", "Volvo", "Saab", "Ford"];
-    list: {
-        text += ca[0] + "<br>";
-        text += ca[1] + "<br>";
-        break list;
-        text += ca[2] + "<br>";
-        text += ca[3] + "<br>";
+    document.getElementById("visit").innerHTML = we;
+
+
+    const A = new Set(["a", "b", "c"]);
+    const B = new Set(["b", "c", "d"]);
+
+    const C = A.union(B);
+    const D = A.intersection(B);
+    const E = A.difference(B);
+    const F = A.symmetricDifference(B);
+    const G = A.isSubsetOf(B);
+    const As = new Set(['a', 'b', 'c']);
+    const Bs = new Set(['b', 'c', 'd']);
+
+    let answer = A.isSupersetOf(B);
+    console.log(C);
+    console.log(D);
+    console.log(E);
+    console.log(F);
+    console.log(G);
+    console.log(answer);
+    let answers = A.isDisjointFrom(B);
+    console.log(answers);
+
+    const sets = new Set(["NAME", "SAHIL", "KUMAR"]);
+
+    sets.add("NAMESSSS");
+    sets.add("NAMESSSS");
+    sets.add("NAMESSssSS");
+    sets.add("NAMESSsssSS");
+    sets.add("NAMESSsssSS");
+    sets.add("NAMESSSssS");
+    sets.add("NAMESSssSsS");
+    let n = "";
+    for (let x of sets) {
+        n += x;
     }
-    // let len = "";
-    let textlen = "SAHILBENIWALMYCOUNTRYNAMEISINDIA";
-    let len = textlen.length;
-    for (let k = len - 1; k >= 0; k--) {
-        len += textlen[k];
+    answer = sets.has("NAME");
+
+    let foe = "";
+    sets.forEach(function(value) {
+        foe += value + "<br>";
+    });
+
+    let dfoe = "";
+    for (const xs of sets.values()) {
+        dfoe += xs;
     }
-    // let len = textlen.length;
-    document.getElementById("demo").innerHTML = len;
+    // document.getElementById("set_method").innerHTML = "This is a set method " + foe + " values<br>";
+    document.getElementById("set_method").innerHTML = "This is a set method " + dfoe + " values<br>";
 
-    let header = "JavaScript String Methods";
-    let tags = ["JavaScript", "String", "Methods"];
-    let html = `<h2>${header}</h2><ul>`;
+    // document.getElementById("set_method").innerHTML = "This is a set method " + n + "<br>" + " values<br>";
 
-    for (const x of tags) {
-        html += `<p>${x}</p>`;
+    const q1 = ["Jan", "Feb", "Mar"];
+    const q2 = ["Apr", "May", "Jun"];
+    const q3 = ["Jul", "Aug", "Sep"];
+    const q4 = ["Oct", "Nov", "Des"];
+
+    const year = [...q1, ...q2, ...q3, ...q4];
+    console.log(year);
+    const fr_nam = ["GETMORE", "HELPFULL", "NEARME"];
+    const ne = fr_nam.keys();
+    const nes = fr_nam.entries();
+    let fe = "";
+    for (let x of ne) {
+        fe += x;
     }
-
-    html += `</ul>`;
-    document.getElementById("demo").innerHTML = html;
-
-
-    function my(a, b) {
-        return a != b ? a : b;
+    for (let x of nes) {
+        fe += x;
     }
-    let result = my(5, 10);
-    let sum = my(5, 5);
-    document.getElementById("demo").innerHTML = "The result " + result + "<br>" + "The sum " + sum;
+    console.log(fe);
+    const s = "ASBASBABSBAS";
+    let te = Array.from(s);
 
-    function sayHello() {
-        return "Hello World";
+
+    const numer = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let arsr = Array.from(numer, (x) => x * 2);
+
+    document.getElementById("s").innerHTML = arsr;
+    document.getElementById("sw").innerHTML = te;
+    const ar = [2, 34, 6, 4, 2];
+    let adds = ar.reduce(myfunctionss);
+    console.log(adds);
+    document.getElementById("gesssss").innerHTML = adds;
+
+    function myfunctionss(total, value) {
+        return total + value;
     }
-
-    console.log(sayHello());
-
-    function toCelsius(fahrenheit) {
-        return (5 / 9) * (fahrenheit - 32);
-    }
-    let value = toCelsius(77);
-    document.getElementById("demo").innerHTML = value;
-
-    function say() {
-        return "SAHIL BENIEWAL";
-    }
-
-    function say() {
-        document.getElementById("do").innerHTML = say();
-    }
-
-    // x = sumAll[12, 345, 5, 6, 6, 7, 7, 57, 567];
-
-    function sumAll() {
-        let sum = 0;
-        for (let i = 0; i < arguments.length; i++) {
-            sum += arguments[i];
-        }
-        return sum;
-    }
-    document.getElementById("demo").innerHTML = sumAll(2432, 24, 23, 42353456345, 6, 5475);
-
-    function mu() {
-        let Find = -Infinity;
-        for (let i = 0; i < arguments.length; i++) {
-            if (arguments[i] > Find) {
-                Find = arguments[i];
-            }
-        }
-        return Find;
-    }
-
-    const add = (a, b) => a + b;
-
-    function sayHello() {
-        return "Hello World";
-    }
-
-    let texts = sayHello();
-    document.getElementById("demo").innerHTML = texts;
     </script>
+    !-- < ul id="listing">
+        < /ul>
+            < p id="display">
+                < /p>
+                    < h2 id="demo">
+                        < /h2>
+                            < h3 id="demo1">
+                                < h1 id="j">
+                                    < /h1>
+
+
+                                        < /h3>
+                                            < p id="do">
+                                                < /p><button onclick="say()">SHOW HERE!</button> -- >
+
+                                                    < script>
+                                                        const b = [3, 24, 2, 52, 62];
+                                                        document.getElementById("gessss").innerHTML = mys(b);
+
+                                                        function mys(arr) {
+                                                        return Math.min.apply(null, arr);
+
+                                                        }
+
+                                                        console.log(mys());
+
+                                                        const gwr = [33, 33, 7, 72, 67, 89, 3];
+                                                        document.getElementById("gesss").innerHTML = gwr;
+
+
+                                                        function my12() {
+                                                        for (let i = gwr.length - 1; i > 0; i--) {
+                                                        let j = Math.floor(Math.random() * (i + 1));
+                                                        let k = gwr[i];
+                                                        gwr[i] = gwr[j];
+                                                        gwr[j] = k;
+                                                        }
+                                                        // gwr.sort(function() {
+                                                        // return 0.5 - Math.random()
+                                                        // });
+                                                        document.getElementById("gesss").innerHTML = gwr;
+                                                        }
+                                                        const points = [3, 234, , 3455, 3, 3, 32, 34, 6, 24, 6, 742, 7,
+                                                        825, 1, 2];
+
+
+                                                        document.getElementById("gesss").innerHTML = points;
+
+                                                        function myFunction11() {
+                                                        points.sort();
+                                                        document.getElementById("gesss").innerHTML = points;
+                                                        }
+                                                        console.log(myFunction11());
+
+                                                        function myFunction12() {
+                                                        points.sort(function(a, b) {
+                                                        return (a - b);
+                                                        });
+                                                        document.getElementById("gesss").innerHTML = points;
+                                                        }
+                                                        const fruitss = ["Banana", "Orange", "Apple", "Mango"];
+
+                                                        const nexts = ["Banansa", "Oransge", "Appse", "Masngo"];
+                                                        const nextss = ["Banasnsa", "Orasnsge", "Appsse", "Masnsgo"];
+                                                        const mymerge = fruitss.concat(nexts, nextss);
+                                                        // let v = mymerge.sort();
+                                                        // mymerge.reverse();
+                                                        let v = mymerge.toSorted();
+                                                        const reversed = mymerge.toReversed();
+                                                        let posittion = mymerge.indexOf("Banana") + 1 + 1 + 2 + (21 / 2
+                                                        * 2);
+                                                        let posittiosn = mymerge.lastIndexOf("Banana") + 1;
+                                                        console.log(mymerge.includes("Apple"));
+                                                        console.log(posittion);
+                                                        console.log(posittiosn);
+
+                                                        console.log(mymerge);
+                                                        let g = fruitss.pop();
+                                                        fruitss.push("kiiw");
+                                                        fruitss.shift();
+                                                        fruitss.unshift("lemon");
+                                                        fruitss[0] = "Ap";
+                                                        fruitss[fruitss.length] = "App";
+                                                        delete fruitss[2];
+                                                        console.log(Array.isArray(fruitss));
+                                                        console.log(g);
+
+
+
+                                                        document.getElementById("ge").innerHTML = v;
+                                                        document.getElementById("ge").innerHTML = reversed;
+                                                        const poit = [24, 56, 1, 4, 57, 2, 5, 3];
+
+                                                        poit.sort(function m(a, b) {
+                                                        return (b - a);
+                                                        });
+                                                        poit.sort(function m(a, b) {
+                                                        return (a - b);
+                                                        });
+                                                        document.getElementById("get_id").innerHTML = poit;
+
+                                                        // let myList = fruitss.length;
+                                                        // let myLisst = fruitss.toString();
+                                                        let fruit = fruitss[2];
+                                                        console.log(fruit);
+                                                        console.log(myList);
+                                                        console.log(myLisst);
+
+
+                                                        let x = "";
+                                                        const myObj = {
+                                                        name: "John",
+                                                        age: 30,
+                                                        cars: [{
+                                                        name: "Ford",
+                                                        models: ["Fiesta", "Focus", "Mustang"]
+                                                        },
+                                                        {
+                                                        name: "BMW",
+                                                        models: ["320", "X3", "X5"]
+                                                        },
+                                                        {
+                                                        name: "Fiat",
+                                                        models: ["500", "Panda"]
+                                                        }
+                                                        ]
+                                                        }
+
+                                                        for (let i in myObj.cars) {
+                                                        x += "<h2>" + myObj.cars[i].name + "</h2>";
+                                                        for (let j in myObj.cars[i].models) {
+                                                        x += myObj.cars[i].models[j] + "<br>";
+                                                        }
+                                                        }
+                                                        document.getElementById("ge").innerHTML = x;
+
+
+                                                        const fruits = ["Banana", "Orange", "Apple", "Mango"];
+                                                        let ds = fruits.length;
+
+                                                        let tes = "<ul>";
+                                                            for (let i = 0; i < ds; i++) { tes +="<li>" + fruits[i]
+                                                                + "</li>" ; } tes +="</ul>" ;
+                                                                document.getElementById("gedt").innerHTML=tes; function
+                                                                Pers(fullname, fathername, age, fatherage) {
+                                                                this.fullname=fullname; this.fathname=fathername;
+                                                                this.age=age; this.fatherage=fatherage; } let t=new
+                                                                Pers("SAHIL> 18", "Surendra Beniwal > 40", 22, 40);
+                                                                document.getElementById("get").innerHTML = t.fullname +
+                                                                "<br>" + t.fathname + "<br>" + t.age + "<br>" +
+                                                                t.fatherage;
+                                                                const pers = {
+                                                                fullname: "SAHIL BENIWAL",
+                                                                fathername: "Surendra Beniwal",
+                                                                age: 22,
+                                                                fatherage: 40
+                                                                }
+                                                                let ss = JSON.stringify(pers);
+                                                                document.getElementById("get_id").innerHTML = ss;
+                                                                // const myArray = Object.values(pers);
+                                                                // let tr = myArray.toString();
+
+                                                                // document.getElementById("get_id").innerHTML = tr;
+                                                                // const person = {
+                                                                // fullname: "Sahil",
+                                                                // lastname: "Beniwal",
+                                                                // age: 24,
+                                                                // // ffcun: function() {
+                                                                // // return this.fullname + " " + this.lastname;
+                                                                // // }
+                                                                // };
+                                                                // let te = "";
+                                                                // for (let x in person) {
+                                                                // te += person[x] + "<br>";
+                                                                // }
+
+                                                                // document.getElementById("get_id").innerHTML = te;
+                                                                // document.getElementById("get_id").innerHTML =
+                                                                person.ffcun();
+
+                                                                function addinp() {
+                                                                let li = document.createElement("li");
+                                                                let input = document.getElementById("inputs").innerHTML
+                                                                + '<input type="text" id="inputs" readonly>';
+
+                                                                document.getElementById("listing").appendChild(li).innerHTML
+                                                                = input;
+                                                                document.getElementById("inputs").value = "";
+                                                                }
+
+                                                                function removeinp() {
+                                                                let listi = document.getElementById("listing");
+                                                                if (listi.lastElementChild) {
+                                                                listi.lastElementChild.remove();
+                                                                }
+                                                                }
+                                                                let names = "REVERSE STRING";
+                                                                let results = names.length;
+                                                                for (let m = results - 1; m >= 0; m--) {
+                                                                results += names[m];
+                                                                }
+                                                                console.log(
+                                                                document.getElementById("demo").innerHTML = results);
+
+                                                                const carss = {
+                                                                type: "Fiat",
+                                                                model: "500",
+                                                                color: "white"
+                                                                };
+
+                                                                document.getElementById("j").innerHTML = carss.type +
+                                                                "<br>" + carss.model + "<br>" + carss.color;
+
+
+                                                                const swift = {};
+                                                                swift.type = "Maruti";
+                                                                swift.model = "2026";
+                                                                swift.color = "Red";
+                                                                swift.name = "swift";
+                                                                document.getElementById("demo").innerHTML = swift.type +
+                                                                "<br>" + swift.model + "<br>" + swift.color + "<br>" +
+                                                                swift.name;
+
+                                                                function myfunction() {
+                                                                document.getElementById("display").innerHTML = "Hello
+                                                                World";
+                                                                }
+                                                                myfunction();
+                                                                let car = ["BMW", "Volvo", "Saab", "Ford"];
+                                                                let text = "";
+
+                                                                for (let i = 0; i < car.length; i++) { console.log(text
+                                                                    +=car[i] + "<br>" ); }
+                                                                    document.getElementById("display").innerHTML=text;
+                                                                    let next="" ; for (let j=0; j < car.length; j++) {
+                                                                    next +=car[j] + "<br>" ; }
+                                                                    document.getElementById("demo").innerHTML=next;
+                                                                    const numbers=[45, 4, 9, 16, 25]; let
+                                                                    c=numbers.length; let suam="" ; let i=3; for (; i <
+                                                                    c; i++) { suam +=numbers[i] + "<br>" ; }
+                                                                    document.getElementById("demo").innerHTML="The sum is:"
+                                                                    + suam; let name="" ; let is=0; while (is <=10) {
+                                                                    name +=is + "<br>" ; is++; }
+                                                                    document.getElementById("demo").innerHTML=name; let
+                                                                    game="" ; let d=1; do { if (d==3) { break; } game
+                                                                    +=d + "<br>" ; d++; } while (d <=10); if (game) {
+                                                                    document.getElementById("demo1").innerHTML=game; }
+                                                                    else {
+                                                                    document.getElementById("demo1").innerHTML="No game"
+                                                                    ; } let day; switch (new Date().getDay()) { case 0:
+                                                                    day="Sunday" ; break; case 1: day="Monday" ; break;
+                                                                    case 2: day="Tuesday" ; break; case 3:
+                                                                    day="Wednesday" ; break; case 4: day="Thursday" ;
+                                                                    break; case 5: day="Friday" ; break; case 6:
+                                                                    day="Saturday" ; break; default: day="Unknown" ; }
+                                                                    document.getElementById("demo").innerHTML="Today is:"
+                                                                    + day; for (let f=0; f < 5; f++) { for (let g=0; g <
+                                                                    5; g++) { if (g===3) continue; text
+                                                                    +="The number is:" + g + f + "<br>" ; } }
+                                                                    document.getElementById("demo").innerHTML=text;
+                                                                    const ca=["BMW", "Volvo" , "Saab" , "Ford" ]; list:
+                                                                    { text +=ca[0] + "<br>" ; text +=ca[1] + "<br>" ;
+                                                                    break list; text +=ca[2] + "<br>" ; text +=ca[3]
+                                                                    + "<br>" ; } // let len="" ; let
+                                                                    textlen="SAHILBENIWALMYCOUNTRYNAMEISINDIA" ; let
+                                                                    len=textlen.length; for (let k=len - 1; k>= 0; k--)
+                                                                    {
+                                                                    len += textlen[k];
+                                                                    }
+                                                                    // let len = textlen.length;
+                                                                    document.getElementById("demo").innerHTML = len;
+
+                                                                    let header = "JavaScript String Methods";
+                                                                    let tags = ["JavaScript", "String", "Methods"];
+                                                                    let html = `<h2>${header}</h2>
+                                                                    <ul>`;
+
+                                                                        for (const x of tags) {
+                                                                        html += `<p>${x}</p>`;
+                                                                        }
+
+                                                                        html += `</ul>`;
+                                                                    document.getElementById("demo").innerHTML = html;
+
+
+                                                                    function my(a, b) {
+                                                                    return a != b ? a : b;
+                                                                    }
+                                                                    let result = my(5, 10);
+                                                                    let sum = my(5, 5);
+                                                                    document.getElementById("demo").innerHTML = "The
+                                                                    result " + result + "<br>" + "The sum " + sum;
+
+                                                                    function sayHello() {
+                                                                    return "Hello World";
+                                                                    }
+
+                                                                    console.log(sayHello());
+
+                                                                    function toCelsius(fahrenheit) {
+                                                                    return (5 / 9) * (fahrenheit - 32);
+                                                                    }
+                                                                    let value = toCelsius(77);
+                                                                    document.getElementById("demo").innerHTML = value;
+
+                                                                    function say() {
+                                                                    return "SAHIL BENIEWAL";
+                                                                    }
+
+                                                                    function say() {
+                                                                    document.getElementById("do").innerHTML = say();
+                                                                    }
+
+                                                                    // x = sumAll[12, 345, 5, 6, 6, 7, 7, 57, 567];
+
+                                                                    function sumAll() {
+                                                                    let sum = 0;
+                                                                    for (let i = 0; i < arguments.length; i++) { sum
+                                                                        +=arguments[i]; } return sum; }
+                                                                        document.getElementById("demo").innerHTML=sumAll(2432,
+                                                                        24, 23, 42353456345, 6, 5475); function mu() {
+                                                                        let Find=-Infinity; for (let i=0; i <script
+                                                                        arguments.length; i++) { if (arguments[i]> Find)
+                                                                        {
+                                                                        Find = arguments[i];
+                                                                        }
+                                                                        }
+                                                                        return Find;
+                                                                        }
+
+                                                                        const add = (a, b) => a + b;
+
+                                                                        function sayHello() {
+                                                                        return "Hello World";
+                                                                        }
+
+                                                                        let texts = sayHello();
+                                                                        document.getElementById("demo").innerHTML =
+                                                                        texts;
+                                                                        </script>
 
 </body>
 

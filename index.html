@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="res"></h1>
+    <h2 id="count">Counter</h2>
+    <p id="count" style="font-size: 40px"></p>
+    <button onclick="addcounter()">Add</button>
+    <button onclick="revcounter()">Sub</button>
+    <button onclick="resetCount()">Reset</button>
+    <button onclick="SaveCount()">Save</button>
+    <button onclick="loadCount()">Load</button>
+
+    <button id="add">Add</button>
+    <button id="sub">Sub</button>
+    <button id="reset">Reset</button>
+    <button id="saving">Save</button>
+    <button id="loading">Load</button>
+    <script>
+      document.getElementById("add").addEventListener("click", increment);
+      document.getElementById("sub").addEventListener("click", decrement);
+      const ms = document.getElementById("message");
+      document.getElementById("reset").addEventListener("click", reset);
+      document.getElementById("saving").addEventListener("click", saving);
+      document.getElementById("loading").addEventListener("click", loading);
+
+      let eventCount = 0;
+      function eventCountUpdate() {
+        document.getElementById("count").innerHTML = eventCount;
+      }
+      function showMsg(counr) {
+        ms.innerHTML = counr;
+        setTimeout(function () {
+          ms.innerHTML = "";
+        }, 3000);
+      }
+      function increment() {
+        eventCount++;
+        eventCountUpdate();
+      }
+      function decrement() {
+        eventCount--;
+        eventCountUpdate();
+      }
+      function reset() {
+        eventCount = 0;
+        eventCountUpdate();
+      }
+      function saving() {
+        localStorage.setItem("count", eventCount);
+        eventCountUpdate();
+      }
+      function loading() {
+        localStorage.getItem("count", eventCount);
+        if (eventCount !== null) {
+          localStorage.setItem("count", eventCount);
+          eventCount = Number(saving);
+          showMsg("!Loaded");
+        }
+        eventCountUpdate();
+      }
+      // let count = 0;
+      // function updateCount() {
+      //   document.getElementById("count").innerHTML = count;
+      // }
+      // function addcounter() {
+      //   count++;
+      //   updateCount();
+      // }
+      // function revcounter() {
+      //   count--;
+      //   updateCount();
+      // }
+      // function resetCount() {
+      //   count = 0;
+      //   updateCount();
+      // }
+
+      // function SaveCount() {
+      //   localStorage.setItem("count", count);
+      // }
+
+      // function loadCount() {
+      //   let Saved = localStorage.getItem("count");
+      //   if (Saved !== null) {
+      //     count = Number(Saved);
+      //   }
+      //   updateCount();
+      // }
+      const noeP = "Our Game Changing";
+      for (let k = noeP.length - 1; k >= 0; k--) {
+        console.log(noeP[k]);
+      }
+      // let pri = "";
+      // for (let i = 0; i <= 10; i++) {
+      //   if (i < 20) {
+      //     if (i < 5) {
+      //       console.log((pri += i));
+      //     } else {
+      //       console.log("This got you");
+      //     }
+      //   } else {
+      //     console.log("This is wrong");
+      //   }
+      // }
+
+      const cars = ["Swift", "Model:2025"];
+      const ob = { Name: "Get", Model: "2044" };
+
+      // function Tocel(Fr) {
+      //   return (5 / 7) * (Fr - 32);
+      // }
+      // console.log(Tocel(110));
+
+      firstName = "Name: SKB";
+      lastName = " Beniwal";
+      age = 22;
+      priceNew = 22;
+      oldPrice = 2;
+      let moreEger = priceNew - oldPrice;
+      console.log("New Price:", moreEger);
+
+      let joinName = firstName.concat(lastName, " Age: ", age);
+      console.log(joinName);
+
+      async function db() {
+        try {
+          let response = await fetch("data.json");
+          let data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      db();
+      async function getdata() {
+        let res = await fetch("data.json");
+        let data = await res.json();
+        // debugger;
+      }
+      console.trace(getdata());
+
+      let price = 501;
+      let quantity = 3;
+      // debugger;  using for stop the code in javascript
+      let total = price * quantity;
+
+      console.log("Total:", total);
+      let x = 4;
+      let y = "4";
+      // console.log(x + y); String value count here
+      console.log(x + Number(y)); // integer value count
+      // console.log(myvalue);
+      let j = "Sahil Beniwal";
+      console.log(j.length);
+
+      if (price === 50) {
+        console.log("This price is good");
+      } else {
+        console.warn("This is warning !");
+      }
+      let users = [
+        { name: "John", age: 25 },
+        { name: "Anna", age: 30 },
+      ];
+      console.table(users);
+      console.error(users);
+
+      function result(b, c) {
+        let a = b + c;
+        return a;
+      }
+      document.getElementById("res").innerHTML = result(
+        923859235872935,
+        92659782346592856,
+      );
+    </script>
+  </body>
+</html>
